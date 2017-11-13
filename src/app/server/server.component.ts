@@ -4,22 +4,23 @@ import { Component } from '@angular/core';
   selector: 'app-server',
   templateUrl: './server.component.html',
   styles: [`
-  .online{
-    color: white;
-  }
+    .online {
+      color: white;
+    }
   `]
 })
 export class ServerComponent {
   serverId: number = 10;
   serverStatus: string = 'offline';
-  // without typespecification it will work too
 
-  constructor(){
+  constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
   }
+
   getServerStatus() {
     return this.serverStatus;
   }
+
   getColor() {
     return this.serverStatus === 'online' ? 'green' : 'red';
   }
